@@ -20,13 +20,11 @@
     <%= f.text_area :description %>
   </div>
 
-<%= f.fields_for :image do |ff| %>
-  <div>
+<%= f.fields_for :images do |ff| %>
+  
     <%= ff.label :image %> <br>
     <%= ff.file_field :image %>
-
-
-  </div>
+  
 <% end %>
 
   <div class="field">

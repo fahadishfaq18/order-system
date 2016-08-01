@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @order.images.build
   end
 
   # GET /orders/1/edit
@@ -69,6 +70,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:title, :description, :size, images_attributes: [:id,:image,:imageable_id,:imageable_type])
+      params.require(:order).permit(
+        :title, :description, :size, images_attributes: [:id,:image,:imageable_id,:imageable_type])
     end
 end

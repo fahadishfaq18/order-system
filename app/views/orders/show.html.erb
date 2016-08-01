@@ -11,7 +11,12 @@
 </p>
 <p>
   <strong>Image:</strong>
-  <%= image_tag @order.images.url %>
+
+  <% @order.images.each do |image| %>
+  <%= image_tag image.image_url(:thumb) %>
+<% end %>
+
+  
 </p>
 
 <p>
